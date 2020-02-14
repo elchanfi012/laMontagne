@@ -1,0 +1,40 @@
+<div class="border-1 px-1">
+    Menu Component !!! <br>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="assets/logo-MT.svg" alt="logo la montagne" routerLink="/home">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logEvent('A la une')" routerLink="/a-la-une">A LA UNE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logEvent('Vie locale')" routerLink="/vie-locale">VIE LOCALE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logEvent('Sports')" routerLink="/sports">SPORTS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logEvent('Loisirs')" routerLink="/loisirs">LOISIRS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logEvent('Economie')" routerLink="/economie">ECONOMIE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="logEvent('Admin')" routerLink="/admin">ADMINISTRATION</a>
+                </li>
+              
+            </ul>
+            <div>
+                <fa-icon [icon]="faSearch"></fa-icon>
+                <fa-icon [icon]="faUser"></fa-icon>
+                <fa-icon [icon]="faBars"></fa-icon>
+            </div>
+    
+        </div>
+    </nav>
+</div>

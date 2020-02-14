@@ -1,0 +1,55 @@
+<div class="border-1 px-1">
+    Article Component !!!<br>
+    <h1>
+        <button class="btn btn-success" (click)="changeBtnClicked()">
+            Cliquez sur moi !!!
+        </button>
+    </h1>
+
+    <h3>{{ nbclick }}</h3>
+    <div class="row">
+        <div class="col-6" [ngSwitch]="favorisTeam">
+            <h2>Ma team</h2>
+            <img *ngSwitchCase="'FCB'" src="https://cdn.1min30.com/wp-content/uploads/2017/09/Logo-FC-Barcelona-.jpg"
+                alt="logo FCB">
+            <img *ngSwitchCase="'ATM'"
+                src="https://upload.wikimedia.org/wikipedia/fr/thumb/9/93/Logo_Atl%C3%A9tico_Madrid_2017.svg/1200px-Logo_Atl%C3%A9tico_Madrid_2017.svg.png"
+                alt="logo ATM">
+            <img *ngSwitchCase="'RMFC'"
+                src="https://upload.wikimedia.org/wikipedia/fr/thumb/c/c7/Logo_Real_Madrid.svg/731px-Logo_Real_Madrid.svg.png"
+                alt="logo real madrid">
+            <p *ngSwitchDefault>Je supporte le Football</p>
+        </div>
+
+        <div class="col-6">
+            <h2>Le classement</h2>
+            <ol>
+                <li *ngFor="let team of classement">{{team}}</li>
+            </ol>
+        </div>
+
+
+    </div>
+
+
+    <!--La variable is loading nous permet d'afficher les resultats seulement quand le serveur à fini
+        la requete -->
+    <ng-container *ngIf="!isLoading">
+        <div *ngFor="let article of articles" class="col-md-12">
+            <app-article-detail (voteEmitter)="vote($event)" [article]="article"></app-article-detail>
+        </div>
+    </ng-container>
+
+
+    <ng-container *ngIf="isLoading">
+        <fa-icon [spin]="true" [icon]="faSpinner"></fa-icon>
+    </ng-container>
+
+    <!--
+    <div class="row">
+        <div *ngFor="let article of articles" class="col-12">
+            <app-article-detail (voteEmitter)="vote($event)" [article]="article"></app-article-detail>
+        </div>
+
+    </div>-->
+</div>

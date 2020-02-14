@@ -1,0 +1,30 @@
+<a routerLink="/home"><button class="btn btn-success">Revenir à la l'accueil</button></a>
+
+
+<ng-container *ngIf="!this.isLoading">
+<div *ngIf="article" class="border-1 mx-5 text-center" [style.background-color]="bgColor">
+    Article Component !!!<br>
+    <h1>{{ article.titre }}</h1>
+    <h1>Les initiales de l'article sont : {{ article.titre|uppercase|firstCharPipe }}</h1>
+    <h2>Cet article a été publié le {{article.dateCreated| date:'longDate'}}</h2>
+
+    <div>
+        <img src="{{ article.image }}">
+    </div>
+    <div>
+        {{ article.contenu }}
+    </div>
+
+    <h3>{{nbclickArticlecourant}} ont votés pour cet article</h3>
+    <input (click)="vote()" class="btn btn-success" value="Voter pour cet article">
+
+</div>
+<div *ngIf="!article">
+    Cet article n'existe pas
+</div>
+</ng-container>
+
+<ng-container *ngIf="isLoading">
+    <fa-icon [spin]="true" [icon]="faSpinner"></fa-icon>
+  </ng-container>
+  

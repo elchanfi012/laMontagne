@@ -1,0 +1,31 @@
+<h1>Ajouter un article : </h1>
+<form #articleForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="titre">Titre :</label>
+        <input type="text" class="form-control" id="titre" name="titre" required [(ngModel)]="article.titre"
+            #titre="ngModel">
+        <div [hidden]="titre.valid" class="alert alert-danger">
+            Le titre de l'article est requis
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="contenu">Contenu :</label>
+        <textarea class="form-control" id="contenu" name="contenu" required [(ngModel)]="article.contenu"
+            #contenu="ngModel"></textarea>
+        <div [hidden]="contenu.valid" class="alert alert-danger">
+            Le contenu de l'article est requis
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="image">Image :</label>
+        <input type="text" class="form-control" id="image" name="image" required [(ngModel)]="article.image"
+            #image="ngModel">
+        <div [hidden]="image.valid" class="alert alert-danger">
+            Le lien de l'image de l'article est requis
+        </div>
+    </div>
+    <input class="btn btn-success" type="submit" value="Valider" [disabled]="!articleForm.valid">
+</form>
+
+
+<!--https://upload.wikimedia.org/wikipedia/commons/e/e7/Real_Madrid_C.F._the_Winner_Of_The_Champions_League_in_2018_%281%29.jpg-->
