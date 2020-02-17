@@ -2,21 +2,24 @@
   "article": [
     {
       "id": 1,
-      "titre": "Le classicofhgfhgf",
-      "contenu": "le match de l'année",
-      "image": "https://www.alg24.net/wp-content/uploads/2019/02/barca-real-c-est-aussi-un-duel-entre-lionel-messi-et-karim-benzema_247153.jpg"
-    },
-    {
-      "titre": "halla madrid",
-      "contenu": "le real madrid est le vainqueur de la ligue des champions et du championnat",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Real_Madrid_C.F._the_Winner_Of_The_Champions_League_in_2018_%281%29.jpg",
-      "id": 3
+      "titre": "le classico",
+      "image": "assets/classico.jpg",
+      "contenu": "le match de l'annee",
+      "dateCreated": "2020-03-01T14:01:27.620Z"
     },
     {
       "id": 2,
       "titre": "le derby",
-      "contenu": "le match de la ville de madrid",
-      "image": "https://t.resfu.com/media/img_news/afp_fr_15c9aef405d4576f6e44499586b4d9f669087439.jpg?size=776x&q=60"
+      "image": "assets/derby.jpg",
+      "contenu": "Oui",
+      "dateCreated": "2020-02-17T14:03:37.796Z"
+    },
+    {
+      "id": 3,
+      "titre": "halla madrid",
+      "image": "assets/halla-madrid.jpg",
+      "contenu": "Le real madrid est le vainqueur de la ligue des champions",
+      "dateCreated": "20-05-26T14:05:30.821Z"
     }
   ]
 }

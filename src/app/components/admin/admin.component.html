@@ -1,4 +1,4 @@
-<a routerLink="/admin/article/ajout"><button class="btn btn-success">Ajouter article</button> </a>
+<a routerLink="/admin/article/ajout" id="addArticleLink"><button class="btn btn-success">Ajouter article</button> </a>
 <h1>les articles présents</h1>
 
 <ng-container *ngIf="!isLoading">
@@ -13,13 +13,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let article of articles">
+      <tr class="article" *ngFor="let article of articles">
         <th scope="row">{{ article.id }}</th>
         <td>{{ article.titre }}</td>
         <td>{{ article.contenu }}</td>
         <td><img src="{{ article.image }}"></td>
         <td><a [routerLink]="['/admin/article/edit', article.id]"><fa-icon [icon]="faEdit"></fa-icon></a>
-          <a (click)="deleteArticle(article.id)" style="margin-left:10px; color:red; cursor: pointer;"><fa-icon [icon]="faTrash"></fa-icon></a>
+          <a class="deleteArticle" (click)="deleteArticle(article.id)" style="margin-left:10px; color:red; cursor: pointer;"><fa-icon [icon]="faTrash"></fa-icon></a>
         </td>
       </tr>
     </tbody>
